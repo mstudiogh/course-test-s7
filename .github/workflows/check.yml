@@ -1,0 +1,9 @@
+name: Check files
+on: [pull_request]
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Look for index.txt
+        run: test -f index.txt && echo "index.txt found"
